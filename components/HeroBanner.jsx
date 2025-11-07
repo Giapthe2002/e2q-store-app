@@ -5,7 +5,7 @@ import React from "react";
 
 const HeroBanner = ({ heroBanner }) => {
   return (
-    <div className="relative py-20 px-10 md:px-20 lg:px-50 xl:px-100 bg-[#dcdcdc] rounded-2xl w-full  leading-[0.9]">
+    <div className="relative py-20 px-10 sm:px-20 md:px-20 lg:px-50 xl:px-70 bg-[#dcdcdc] rounded-2xl w-full  leading-[0.9]">
       <div className=" md:flex md:flex-row md:justify-between h-[300px] md:h-auto">
         <div className="relative z-10">
           <p className="font-medium">{heroBanner.smallText}</p>
@@ -17,7 +17,7 @@ const HeroBanner = ({ heroBanner }) => {
           </h1>
           <div>
             <Link href="/product/${heroBanner.product}">
-              <Button variant="outline" className="mt-8 md:mt-16">
+              <Button variant="outline" size="lg" className="mt-8 md:mt-16">
                 {heroBanner.buttonText}
               </Button>
             </Link>
