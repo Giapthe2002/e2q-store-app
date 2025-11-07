@@ -17,7 +17,7 @@ const Product = ({ product: { image, name, slug, price } }) => {
             alt="Product image"
             className="bg-[#ebebeb] rounded-[15px] scale-100 transition-transform duration-500 ease-in-out w-[250px] h-[250px] object-contain hover:scale-105"
           />
-          <p className="font-medium">{name}</p>
+          <p className="font-medium mt-1 text-[#424242dd]">{name}</p>
           <p className="font-bold mt-1.5 text-black">{price}đ</p>
         </div>
       </Link>
