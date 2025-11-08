@@ -21,7 +21,7 @@ const FooterBanner = ({
 }) => {
   const urlImage = urlFor(image).url();
   return (
-    <div className="py-6 md:py-20 px-1 md:px-10 lg:px-20 xl:px-30 bg-amber-600 rounded-[15px] relative leading-none text-white w-full mt-[120px] z-10 overflow-hidden">
+    <div className="py-6 md:py-20 px-1 md:px-10 lg:px-20 bg-amber-600 rounded-[15px] relative leading-none text-white w-full mt-[120px] z-10 overflow-hidden">
       <div className="flex flex-col gap-3 md:gap-0 md:flex-row md:justify-between md:px-1 lg:px-10 xl:px-30">
         <div className="">
           <p className="m-[18px]">{discount}</p>
@@ -34,7 +34,7 @@ const FooterBanner = ({
           <h3 className="font-extrabold text-5xl md:text-[60px]">{midText}</h3>
           <p className="m-1 md:m-[18px]">{desc}</p>
           <Link href={`/product/${product}`}>
-            <Button variant="secondary" className="mt-4 md:m-[18px]">{buttonText}</Button>
+            <Button variant="secondary" size="lg" className="mt-4 md:m-[18px]">{buttonText}</Button>
           </Link>
         </div>
 
