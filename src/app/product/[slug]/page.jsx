@@ -1,30 +1,51 @@
-import React from 'react'
-import { urlFor, client } from '@/lib/client'
-import Image from 'next/image'
+"use client";
 
-const ProductDails = async ({params: {slug}}) => {
-  const query = `*[_type == "product" && slug.current == "${slug}"][0]`;
-  const productsQuery = `*[_type == "product"]`;
+import React, { useEffect, useState } from "react";
+import { urlFor, client } from "@/lib/client";
+import Image from "next/image";
+import { useParams } from "next/navigation";
 
-  const product = await client.fetch(query);
-  const products = await client.fetch(productsQuery);
+const ProductDails = () => {
+  const params = useParams();
+  const slug = params.slug;
 
-  // const urlImage = urlFor
+  const [product, setProduct] = useState(null);
+  const [imageUrl, setImageUrl] = useState("");
+
+  useEffect(() => {
+    if (!slug) return;
+
+    const fetchProduct = async () => {
+      const query = `*[_type == "product" && slug.current == $slug][0]`;
+      const data = await client.fetch(query, { slug });
+      setProduct(data);
+
+      if (data?.image?.length > 0) {
+        setImageUrl(urlFor(data.image[0]).url());
+      }
+    };
+
+    fetchProduct();
+  }, [slug]);
+
+  if (!product) return <div>Loading product...</div>;
 
   return (
-    
     <div>
-      {console.log(slug)}
-        <div className=''>
-            <div>
-              <h1></h1>
-                <div className=''>
-                    <Image src="" alt=''/>
-                </div>
-            </div>
+      <div className="">
+        <div>
+          <div className="">
+            <Image
+              src={imageUrl}
+              alt="Image product"
+              width={250}
+              height={250}
+            />
+          </div>
         </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
 export default ProductDails;
