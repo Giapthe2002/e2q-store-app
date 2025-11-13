@@ -25,8 +25,12 @@ const FooterBanner = ({
       <div className="flex flex-col gap-3 md:gap-0 md:flex-row md:justify-between md:px-1 lg:px-10 xl:px-30">
         <div className="">
           <p className="m-[18px]">{discount}</p>
-          <h3 className="font-black text-4xl md:text-[80px] ml-[25px]">{largeText1}</h3>
-          <h3 className="font-black text-4xl md:text-[80px] ml-[25px]">{largeText2}</h3>
+          <h3 className="font-black text-4xl md:text-[80px] ml-[25px]">
+            {largeText1}
+          </h3>
+          <h3 className="font-black text-4xl md:text-[80px] ml-[25px]">
+            {largeText2}
+          </h3>
           <p className="m-[18px]">{saleTime}</p>
         </div>
         <div className="">
@@ -34,7 +38,9 @@ const FooterBanner = ({
           <h3 className="font-extrabold text-5xl md:text-[60px]">{midText}</h3>
           <p className="m-1 md:m-[18px]">{desc}</p>
           <Link href={`/product/${product}`}>
-            <Button variant="secondary" size="lg" className="mt-4 md:m-[18px]">{buttonText}</Button>
+            <Button variant="secondary" size="lg" className="mt-4 md:m-[18px]">
+              {buttonText}
+            </Button>
           </Link>
         </div>
 
